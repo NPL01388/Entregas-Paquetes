@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <h1>Entrega de Paquete</h1>
+    <form id="form">
+        <label for="guia">Número de Guía</label>
+        <input type="text" id="guia" required placeholder="Número de Guía">
+        
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" required placeholder="Nombres y Apellidos del Cliente">
+        
+        <label for="cc">Tipo de Documento</label>
+        <select id="cc">
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="PP">Pasaporte</option>
+            <option value="CE">Cédula Extranjera</option>
+            <option value="PPT">Permiso Por Protección Temporal</option>
+        </select>
+        <input type="text" id="documento" required placeholder="Número de Documento">
+        
+        <h2>Firma del Cliente</h2>
+        <canvas id="firma-canvas" width="400" height="150"></canvas>
+        
+        <button type="button" id="clear-btn">Limpiar Firma</button>
+        <button type="button" id="generate-pdf-btn">Generar PDF</button>
+    </form>
+    
+    <iframe id="pdf-preview" style="display: none;"></iframe>
+
+    <button id="next-delivery-btn" style="display: none;">Realizar Siguiente Entrega</button>
+
+    <div id="status"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
